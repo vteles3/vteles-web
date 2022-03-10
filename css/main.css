@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+body {
+	color: #f6d47d;
+	background-color: #634418;
+}
+
+.popup {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  border-radius: 50px;
+	background-color: #473111;
+  display: block;
+}
+
+input[type=text] {
+  position: relative;
+  margin-top: 20px;
+  border-width: 0px;
+	border-radius: 5px;
+	background-color: #F2D380;
+  color: #3C280A;
+	text-align: center;
+  width: 100%;
+  height: 30px;
+  font-size: large;
+}
+
+#loading {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.loader {
+  position: relative;
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 20px;
+  height: 20px;
+  left: 49%;
+  top: 49%;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

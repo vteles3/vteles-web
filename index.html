@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>VTeles</title>
+		<link rel="icon" href="images/logo.png">
+
+		<link href="css/main.css" rel="stylesheet" type="text/css"/>
+
+		<script type="text/javascript" src="libs/sfs2x-api-1.7.11.js"></script>
+
+		<script type="text/javascript" src="scripts/Loading.js"></script>
+		<script type="text/javascript" src="scripts/Connector.js"></script>
+		<script type="text/javascript" src="scripts/main.js"></script>
+	</head>
+	<body>
+		<div id="login_panel">
+			<div class="overlay">
+				<div class="popup">
+					<input type="text" id="server_address" placeholder="IP..." value="35.240.156.221"/>
+					<input type="text" id="server_port" placeholder="Port..." value="8080"/>
+					<input type="button" id="connectBt" value="Kết nối" onclick="onConnectBtClick()"/>
+				</div>
+			</div>
+		</div>
+		<div id="loading">
+			<div class="overlay">
+				<div class="loader"></div>
+			</div>
+		</div>
+	</body>
+</html>
