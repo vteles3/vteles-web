@@ -8,7 +8,7 @@ class Connector {
     config.host = serverAddress;
     config.port = serverPort;
     config.debug = false;
-    config.useSSL = false;
+    config.useSSL = serverPort == 8080 ? false : true;
   
     this.sfs = new SFS2X.SmartFox(config);
     
