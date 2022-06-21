@@ -3,11 +3,11 @@ class Connector {
     this.sfs = null;
   };
 
-  initConnector(serverAddress, useEncryption) {
+  initConnector(serverAddress, port) {
     var config = {};
     config.host = serverAddress;
-    config.port = useEncryption ? 8443 : 8080;
-    config.useSSL = useEncryption;
+    config.port = port;
+    config.useSSL = true;
     config.zone = "BasicExamples";
   
     this.sfs = new SFS2X.SmartFox(config);
