@@ -12,7 +12,7 @@ function autoConnectToServer() {
 function onConnectBtClick() {
 	var serverAddress = document.getElementById("server_address").value;
 	var serverPort = Number(document.getElementById("server_port").value);
-	connector.initConnector(serverAddress, serverPort == 8080 ? false : true);
+	connector.initConnector(serverAddress, serverPort);
 	loading.addLoading("connecting");
 }
 
