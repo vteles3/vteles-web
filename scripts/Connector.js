@@ -7,7 +7,7 @@ class Connector {
     var config = {};
     config.host = serverAddress;
     config.port = port;
-    config.useSSL = true;
+    config.useSSL = port == 8443 ? true : false;
     config.zone = "BasicExamples";
   
     this.sfs = new SFS2X.SmartFox(config);
