@@ -6,26 +6,190 @@
 		<link rel="icon" href="images/logo.png">
 
 		<link href="css/main.css" rel="stylesheet" type="text/css"/>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+
 
 		<script type="text/javascript" src="libs/sfs2x-api-1.7.11.js"></script>
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+
+		<script type="text/javascript" src="scripts/Constants.js"></script>
 		<script type="text/javascript" src="scripts/Loading.js"></script>
-		<script type="text/javascript" src="scripts/Connector.js"></script>
 		<script type="text/javascript" src="scripts/main.js"></script>
 	</head>
 	<body>
-		<div id="login_panel">
-			<div class="overlay">
-				<div class="popup">
-					<input type="text" id="server_address" placeholder="IP..." value="34.87.51.159"/>
-					<input type="text" id="server_port" placeholder="Port..." value="8080"/>
-					<input type="button" id="connectBt" value="Kết nối" onclick="onConnectBtClick()"/>
+		<header class="container">
+			<img src="images/logo-full.png" style="width: 150px;">
+		</header>
+		<div class="container">
+			<form class="form-horizontal" id="panel-connect">
+				<h1 class="text-center">Kết nối</h1>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="server">Server IP:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="server" placeholder="Nhập IP..." name="server">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="port">Cổng:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="port" placeholder="Nhập cổng..." name="port">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="button" class="btn btn-primary" onclick="onConnectButtonClick()">Kết nối</button>
+					</div>
+				</div>
+			</form>
+
+			<form class="form-horizontal" id="panel-login" style="display: none;">
+				<h1 class="text-center">Đăng nhập</h1>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="login-username">Tên đăng nhập:</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="login-username" placeholder="Username..." name="login-username">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="login-password">Mật khẩu:</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="login-password" placeholder="Password..." name="login-password">
+					</div>
+					<div class="checkbox col-sm-offset-2 col-sm-10">
+						<label><input type="checkbox" id="toggle-password" onclick="onTogglePasswordClick()">Hiện mật khẩu</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="button" class="btn btn-primary" onclick="onLoginButtonClick()">Đăng nhập</button>
+					</div>
+				</div>
+			</form>
+			<div id="panel-admin" style="display: none;">
+				<div class="container-fluid">
+					<div class="row content">
+						<div class="col-sm-3 sidenav">
+							<h4 id="admin-name">Username</h4>
+							<ul class="nav nav-pills nav-stacked">
+								<li id="tab-admin-home-page"><a onclick="onAdminHomePageTabClick();">Trang chủ</a></li>
+								<li id="tab-admin-create-leader"><a onclick="onAdminCreateLeaderTabClick();">Tạo trưởng phòng mới</a></li>
+								<li id="tab-admin-update-user"><a onclick="onAdminUpdateUserTabClick();">Cập nhật tài khoản</a></li>
+								<li id="tab-admin-change-password"><a onclick="onAdminChangePasswordTabClick();">Đổi mật khẩu</a></li>
+							</ul>
+							<button type="button" class="btn btn-danger btn-block" onclick="onLogoutButtonClick()">
+								<span class="glyphicon glyphicon-log-out"></span>
+								Đăng xuất
+							</button>
+						</div>
+				
+						<div class="col-sm-9">
+							<div id="side-panel-admin-home-page" style="display: none;">
+								<h1 class="text-center">Admin Home Page</h1>
+							</div>
+							<div id="side-panel-admin-create-leader" style="display: none;">
+								<h1 class="text-center">Admin Create Leader</h1>
+							</div>
+							<div id="side-panel-admin-update-user" style="display: none;">
+								<h1 class="text-center">Cập nhật thông tin tài khoản</h1>
+								<div class="form-group">
+									<label>Tên đăng nhập:</label>
+									<input type="text" class="form-control" id="admin-search-user" placeholder="Nhập tên đăng nhập cần tìm kiếm..." name="admin-search-user">
+								</div>
+								<button type="button" class="btn btn-primary" onclick="onAdminSearchUserButtonClick()">Tìm kiếm</button>
+								<h4 id="admin-search-user-error" style="display: none;">Tài khoản này không tồn tại!</h4>
+								<ul class="list-group" id="admin-search-user-result" style="display: none;">
+									<h4>Thông tin tài khoản</h4>
+									<li class="list-group-item row">
+										<h4 class="col-sm-3 text-right">Tài khoản: </h4>
+										<h4 class="col-sm-7" id="admin-search-user-account"></h4>
+										<button class="btn btn-warning col-sm-2" id="admin-reset-password-user" onclick="onAdminResetPasswordUserButtonClick();">Reset mật khẩu</button>
+									</li>
+									<li class="list-group-item row">
+										<h4 class="col-sm-3 text-right">Tên: </h4>
+										<h4 class="col-sm-7" id="admin-search-user-name"></h4>
+									</li>
+									<li class="list-group-item row">
+										<h4 class="col-sm-3 text-right">Chức vụ: </h4>
+										<h4 class="col-sm-7" id="admin-search-user-position"></h4>
+									</li>
+									<li class="list-group-item row">
+										<h4 class="col-sm-3 text-right">Phòng: </h4>
+										<h4 class="col-sm-7" id="admin-search-user-room"></h4>
+									</li>
+									<li class="list-group-item row">
+										<h4 class="col-sm-3 text-right">Truy cập gần nhất: </h4>
+										<h4 class="col-sm-7" id="admin-search-user-last-accessed"></h4>
+									</li>
+									<li class="list-group-item row">
+										<h4 class="col-sm-3 text-right">Ngày tạo: </h4>
+										<h4 class="col-sm-7" id="admin-search-user-created-datetime"></h4>
+									</li>
+									<li class="list-group-item row">
+										<h4 class="col-sm-3 text-right">Hạn dùng: </h4>
+										<h4 class="col-sm-7" id="admin-search-user-expired-datetime"></h4>
+										<button class="btn btn-primary col-sm-2" id="admin-extend-user" onclick="onAdminExtendUserButtonClick();">Gia hạn 1 tháng</button>
+										<!-- <span class='input-group date col-sm-3' id='extend-user-datetimepicker'>
+											<input data-format="yyyy-MM-dd hh:mm:ss" id='extend-user-datetimepicker-data' type='text' class="form-control"/>
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</span> -->
+									</li>
+									<li class="list-group-item row">
+										<h4 class="col-sm-3 text-right">Trạng thái: </h4>
+										<h4 class="col-sm-7" id="admin-search-user-deleted"></h4>
+										<button class="btn btn-danger col-sm-2" id="admin-delete-user" style="display: none;" onclick="onAdminDeleteUserButtonClick();">Xóa tài khoản</button>
+										<button class="btn btn-success col-sm-2" id="admin-restore-user" style="display: none;" onclick="onAdminRestoreUserButtonClick();">Khôi phục</button>
+									</li>
+								</ul>
+							</div>
+							<div id="side-panel-admin-change-password" style="display: none;">
+								<h1 class="text-center">Thay đổi mật khẩu</h1>
+								<div class="form-group">
+									<label>Mật khẩu hiện tại:</label>
+									<input type="password" class="form-control" id="admin-update-password-old" placeholder="Nhập mật khẩu hiện tại" name="admin-update-password-old">
+								</div>
+								<div class="form-group">
+									<label>Mật khẩu mới:</label>
+									<input type="password" class="form-control" id="admin-update-password-new" placeholder="Nhập mật khẩu hiện tại" name="admin-update-password-new">
+								</div>
+								<div class="form-group">
+									<label>Nhập lại mật khẩu mới:</label>
+									<input type="password" class="form-control" id="admin-update-password-new-repeat" placeholder="Nhập mật khẩu hiện tại" name="admin-update-password-new-repeat">
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox" id="toggle-update-password" onclick="onToggleAdminUpdatePasswordClick()">Hiện mật khẩu</label>
+								</div>
+								<button type="button" class="btn btn-primary" onclick="onAdminUpdatePasswordButtonClick()">Đổi mật khẩu</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div id="loading">
-			<div class="overlay">
-				<div class="loader"></div>
+
+			<div id="panel-director" style="display: none;">
+				<h1 class="text-center">Chào mừng Director</h1>
+			</div>
+			
+			<div id="panel-leader" style="display: none;">
+				<h1 class="text-center">Chào mừng Leader</h1>
+			</div>
+
+			<div id="panel-sale" style="display: none;">
+				<h1 class="text-center">Chào mừng Sale</h1>
+			</div>
+
+			<div id="panel-telesale" style="display: none;">
+				<h1 class="text-center">Chào mừng Telesale</h1>
 			</div>
 		</div>
 	</body>
