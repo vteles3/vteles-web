@@ -7,6 +7,8 @@
 
 		<link href="css/main.css" rel="stylesheet" type="text/css"/>
 		
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6971698276345184" crossorigin="anonymous"></script>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -14,7 +16,6 @@
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
-
 
 		<script type="text/javascript" src="libs/sfs2x-api-1.7.11.js"></script>
 
@@ -50,13 +51,12 @@
 					</div>
 				</div>
 			</form>
-
 			<form class="form-horizontal" id="panel-login" style="display: none;">
 				<h1 class="text-center">Đăng nhập</h1>
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="login-username">Tên đăng nhập:</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="login-username" placeholder="Username..." name="login-username">
+						<input type="text" class="form-control" id="login-username" placeholder="Điền tên đăng nhập..." name="login-username">
 					</div>
 				</div>
 				<div class="form-group">
@@ -96,7 +96,81 @@
 								<h1 class="text-center">Admin Home Page</h1>
 							</div>
 							<div id="side-panel-admin-create-leader" style="display: none;">
-								<h1 class="text-center">Admin Create Leader</h1>
+								<h1 class="text-center">Tạo tài khoản Trưởng phòng mới</h1>
+								<div class="form-group">
+									<div class="form-group">
+										<label class="control-label" for="admin-create-leader-location">Chi nhánh:</label>
+										<select class="form-control form-select" aria-label="Chi nhánh" id="admin-create-leader-location">
+											<option selected="0">Chọn chi nhánh</option>
+											<option value="1">Hà Nội</option>
+											<option value="2">Hạ Long</option>
+											<option value="3">Bãi Cháy</option>
+											<option value="4">Hải Phòng</option>
+											<option value="5">Thanh Hóa</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="admin-create-leader-room">Phòng:</label>
+										<select class="form-control form-select" aria-label="Phòng" id="admin-create-leader-room">
+											<option selected="0">Chọn phòng</option>
+											<option value="1">Vhomes 1</option>
+											<option value="2">Vhomes 2</option>
+											<option value="3">Vhomes 3</option>
+											<option value="4">Vhomes 4</option>
+											<option value="5">Vhomes 5</option>
+											<option value="6">Vhomes 6</option>
+											<option value="7">Vhomes 7</option>
+											<option value="8">Vhomes 8</option>
+											<option value="9">Vhomes 9</option>
+											<option value="10">Vhomes 10</option>
+											<option value="11">Vhomes 11</option>
+											<option value="12">Vhomes 12</option>
+											<option value="13">Vhomes 13</option>
+											<option value="14">Vhomes 14</option>
+											<option value="15">Vhomes 15</option>
+											<option value="16">Vhomes 16</option>
+											<option value="17">Vhomes 17</option>
+											<option value="18">Vhomes 18</option>
+											<option value="19">Vhomes 19</option>
+											<option value="20">Vhomes 20</option>
+											<option value="21">Vhomes 21</option>
+											<option value="22">Vhomes 22</option>
+											<option value="23">Vhomes 23</option>
+											<option value="24">Vhomes 24</option>
+											<option value="25">Vhomes 25</option>
+											<option value="26">Vhomes 26</option>
+											<option value="27">Vhomes 27</option>
+											<option value="28">Vhomes 28</option>
+											<option value="29">Vhomes 29</option>
+											<option value="30">Vhomes 30</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="admin-create-leader-group">Khối:</label>
+										<select class="form-control form-select" aria-label="Khối" id="admin-create-leader-group">
+											<option selected="0">Chọn khối</option>
+											<option value="1">Khối 1</option>
+											<option value="2">Khối 2</option>
+											<option value="3">Khối 3</option>
+											<option value="4">Khối 4</option>
+											<option value="5">Khối 5</option>
+											<option value="6">Khối 6</option>
+											<option value="7">Khối 7</option>
+											<option value="8">Khối 8</option>
+											<option value="9">Khối 9</option>
+											<option value="10">Khối 10</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="admin-create-leader-username">Tên đăng nhập:</label>
+										<input type="text" class="form-control" id="admin-create-leader-username" placeholder="Điền tên đăng nhập..." name="admin-create-leader-username">
+									</div>
+									<div class="form-group">
+										<label class="control-label" for="admin-create-leader-name">Tên hiển thị:</label>
+										<input type="text" class="form-control" id="admin-create-leader-name" placeholder="Điền tên hiển thị..." name="admin-create-leader-name">
+									</div>
+									<button type="button" class="btn btn-primary" onclick="onAdminCreateLeaderButtonClick()">Tạo tài khoản</button>
+								</div>
 							</div>
 							<div id="side-panel-admin-update-user" style="display: none;">
 								<h1 class="text-center">Cập nhật thông tin tài khoản</h1>
@@ -137,12 +211,6 @@
 										<h4 class="col-sm-3 text-right">Hạn dùng: </h4>
 										<h4 class="col-sm-7" id="admin-search-user-expired-datetime"></h4>
 										<button class="btn btn-primary col-sm-2" id="admin-extend-user" onclick="onAdminExtendUserButtonClick();">Gia hạn 1 tháng</button>
-										<!-- <span class='input-group date col-sm-3' id='extend-user-datetimepicker'>
-											<input data-format="yyyy-MM-dd hh:mm:ss" id='extend-user-datetimepicker-data' type='text' class="form-control"/>
-											<span class="input-group-addon">
-												<span class="glyphicon glyphicon-calendar"></span>
-											</span>
-										</span> -->
 									</li>
 									<li class="list-group-item row">
 										<h4 class="col-sm-3 text-right">Trạng thái: </h4>
@@ -167,7 +235,7 @@
 									<input type="password" class="form-control" id="admin-update-password-new-repeat" placeholder="Nhập mật khẩu hiện tại" name="admin-update-password-new-repeat">
 								</div>
 								<div class="checkbox">
-									<label><input type="checkbox" id="toggle-update-password" onclick="onToggleAdminUpdatePasswordClick()">Hiện mật khẩu</label>
+									<label><input type="checkbox" id="admin-toggle-update-password" onclick="onToggleAdminUpdatePasswordClick()">Hiện mật khẩu</label>
 								</div>
 								<button type="button" class="btn btn-primary" onclick="onAdminUpdatePasswordButtonClick()">Đổi mật khẩu</button>
 							</div>
@@ -181,15 +249,522 @@
 			</div>
 			
 			<div id="panel-leader" style="display: none;">
-				<h1 class="text-center">Chào mừng Leader</h1>
+				<div class="container-fluid">
+					<div class="row content">
+						<div class="col-sm-3 sidenav">
+							<h4 id="leader-name">Username</h4>
+							<ul class="nav nav-pills nav-stacked">
+								<li id="tab-leader-home-page"><a onclick="onLeaderHomePageTabClick();">Trang chủ</a></li>
+								<li id="tab-leader-create-sale"><a onclick="onLeaderCreateSaleTabClick();">Tạo nhân viên mới</a></li>
+								<li id="tab-leader-change-password"><a onclick="onLeaderChangePasswordTabClick();">Đổi mật khẩu</a></li>
+							</ul>
+							<button type="button" class="btn btn-danger btn-block" onclick="onLogoutButtonClick()">
+								<span class="glyphicon glyphicon-log-out"></span>
+								Đăng xuất
+							</button>
+						</div>
+						<div class="col-sm-9">
+							<div id="side-panel-leader-home-page" style="display: none;">
+								<h1 class="text-center">Danh sách nhân viên</h1>
+								<h4 class="control-label">Chọn khoảng thời gian bạn muốn kiểm tra kết quả làm việc</h4>
+								<div class="row form-group">
+									<label class="col-sm-2 text-right" for="leader-get-data-from">Từ ngày:</label>
+									<div class="col-sm-3">
+										<span class='input-group date' id='leader-get-data-from-picker'>
+											<input data-format="dd-MM-yyyy" type='text' class="form-control" id='leader-get-data-from'/>
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</span>
+									</div>
+									<label class="col-sm-2 text-right" for="leader-get-data-to">Đến ngày:</label>
+									<div class="col-sm-3">
+										<span class='input-group date' id='leader-get-data-to-picker'>
+											<input data-format="dd-MM-yyyy" type='text' class="form-control" id='leader-get-data-to'/>
+											<span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</span>
+									</div>
+									<button type="button" class="btn btn-primary" onclick="onLeaderGetDataButtonClick()">Truy xuất</button>
+								</div>
+								<table class="table" id="leader-data-table">
+									<thead>
+										<tr>
+											<th>Tên</th>
+											<th>Chức vụ</th>
+											<th>Số cuộc gọi</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+							<div id="side-panel-leader-create-sale" style="display: none;">
+								<h1 class="text-center">Tạo tài khoản Nhân viên mới</h1>
+								<div class="form-group">
+									<label class="control-label" for="leader-create-sale-username">Tên đăng nhập:</label>
+									<input type="text" class="form-control" id="leader-create-sale-username" placeholder="Điền tên đăng nhập..." name="leader-create-sale-username">
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="leader-create-sale-name">Tên hiển thị:</label>
+									<input type="text" class="form-control" id="leader-create-sale-name" placeholder="Điền tên hiển thị..." name="leader-create-sale-name">
+								</div>
+								<button type="button" class="btn btn-primary" onclick="onLeaderCreateSaleButtonClick()">Tạo tài khoản</button>
+							</div>
+							<div id="side-panel-leader-change-password" style="display: none;">
+								<h1 class="text-center">Thay đổi mật khẩu</h1>
+								<div class="form-group">
+									<label>Mật khẩu hiện tại:</label>
+									<input type="password" class="form-control" id="leader-update-password-old" placeholder="Nhập mật khẩu hiện tại" name="leader-update-password-old">
+								</div>
+								<div class="form-group">
+									<label>Mật khẩu mới:</label>
+									<input type="password" class="form-control" id="leader-update-password-new" placeholder="Nhập mật khẩu hiện tại" name="leader-update-password-new">
+								</div>
+								<div class="form-group">
+									<label>Nhập lại mật khẩu mới:</label>
+									<input type="password" class="form-control" id="leader-update-password-new-repeat" placeholder="Nhập mật khẩu hiện tại" name="leader-update-password-new-repeat">
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox" id="leader-toggle-update-password" onclick="onToggleLeaderUpdatePasswordClick()">Hiện mật khẩu</label>
+								</div>
+								<button type="button" class="btn btn-primary" onclick="onLeaderUpdatePasswordButtonClick()">Đổi mật khẩu</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<div id="panel-sale" style="display: none;">
-				<h1 class="text-center">Chào mừng Sale</h1>
+				<div class="container-fluid">
+					<div class="row content">
+						<div class="col-sm-3 sidenav">
+							<h4 id="sale-name">Username</h4>
+							<ul class="nav nav-pills nav-stacked">
+								<li id="tab-sale-telesale-manager"><a onclick="onSaleTelesaleManagerTabClick();">Quản lý Telesale</a></li>
+								<li id="tab-sale-data-manager"><a onclick="onSaleDataManagerTabClick();">Quản lý Data</a></li>
+								<li id="tab-sale-project-manager"><a onclick="onSaleProjectManagerTabClick();">Quản lý Dự án</a></li>
+								<li id="tab-sale-change-password"><a onclick="onSaleChangePasswordTabClick();">Đổi mật khẩu</a></li>
+							</ul>
+							<button type="button" class="btn btn-danger btn-block" onclick="onLogoutButtonClick()">
+								<span class="glyphicon glyphicon-log-out"></span>
+								Đăng xuất
+							</button>
+						</div>
+						<div class="col-sm-9">
+							<div id="side-panel-sale-telesale-manager" style="display: none;">
+								<h1 class="text-center">Quản lý Telesale</h1>
+								<div class="row form-group">
+									<h4 class="col-sm-8">Danh sách Telesale của bạn</h4>
+									<button type="button" class="btn btn-success" data-toggle="modal" data-target="#sale-create-telesale-modal"  style="float: right;">
+										<span class="glyphicon glyphicon-plus"></span>
+										Tạo Telesale mới
+									</button>
+								</div>
+								<table class="table" id="sale-telesale-manager-table">
+									<thead>
+										<tr>
+											<th>Tên</th>
+											<th>SĐT</th>
+											<th>Dự án</th>
+											<th>Data</th>
+											<th>Mạng</th>
+											<th>Luật</th>
+											<th>Xóa</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+								<div id="sale-create-telesale-modal" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Tạo tài khoản Nhân viên mới</h4>
+											</div>
+											<div class="modal-body">
+												<div class="form-group">
+													<label class="control-label" for="sale-create-telesale-username">Tên đăng nhập:</label>
+													<input type="text" class="form-control" id="sale-create-telesale-username" placeholder="Điền tên đăng nhập..." name="sale-create-telesale-username">
+												</div>
+												<div class="form-group">
+													<label class="control-label" for="sale-create-telesale-name">Tên hiển thị:</label>
+													<input type="text" class="form-control" id="sale-create-telesale-name" placeholder="Điền tên hiển thị..." name="sale-create-telesale-name">
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-success" onclick="onSaleCreateTelesaleButtonClick()">Tạo tài khoản</button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="sale-delete-telesale-modal" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Xác nhận xóa</h4>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-primary" onclick="onSaleDeleteTelesaleButtonClick()">Xác nhận xóa</button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="sale-update-telesale-project-modal" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Cập nhật Dự án</h4>
+											</div>
+											<div class="modal-body">
+												<div class="form-group">
+													<label class="control-label" for="sale-update-telesale-project">Mã dự án:</label>
+													<input type="text" class="form-control" id="sale-update-telesale-project" placeholder="Điền mã dự án..." name="sale-update-telesale-project">
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-success" onclick="onSaleUpdateTelesaleProjectButtonClick()">Cập nhật</button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="sale-update-telesale-datasheet-modal" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Cập nhật Data</h4>
+											</div>
+											<div class="modal-body">
+												<div class="form-group">
+													<label class="control-label" for="sale-update-telesale-datasheet">Mã Data:</label>
+													<input type="text" class="form-control" id="sale-update-telesale-datasheet" placeholder="Điền mã dự án..." name="sale-update-telesale-datasheet">
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-success" onclick="onSaleUpdateTelesaleDatasheetButtonClick()">Cập nhật</button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="sale-update-telesale-network-modal" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Cập nhật Mạng</h4>
+											</div>
+											<div class="modal-body">
+												<div class="form-group">
+													<label class="control-label" for="sale-update-telesale-network">Chọn mạng:</label>
+													<select class="form-control form-select" aria-label="Mạng" id="sale-update-telesale-network-group">
+														<option value="0" selected="0">Tất cả</option>
+														<option value="1">Viettel</option>
+														<option value="2">Vinaphone</option>
+														<option value="3">Mobiphone</option>
+													</select>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-success" onclick="onSaleUpdateTelesaleNetworkButtonClick()">Cập nhật</button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="sale-update-telesale-rule-modal" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Cập nhật Luật</h4>
+											</div>
+											<div class="modal-body">
+												<div class="form-group">
+													<label class="control-label" for="sale-update-telesale-rule">Luật trả sđt:</label>
+													<p class="control-label" for="sale-update-telesale-rule">Số lần đã gọi:</p>
+													<div>
+														<select class="form-select" aria-label="Khối" id="sale-update-telesale-rule-compare">
+															<option value="0">Dưới</option>
+															<option value="1" selected="1">Bằng</option>
+															<option value="2">Trên</option>
+														</select>
+														<select class="form-select" aria-label="Khối" id="sale-update-telesale-rule-number">
+															<option value="0" selected="0">0</option>
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+														</select>
+														<div class="text-wrap"> với kết quả cuộc gọi là </div>
+														<select class="form-select" aria-label="Khối" id="sale-update-telesale-rule-result">
+															<option value="0" selected="0">Bất kỳ</option>
+															<option value="1">Quan tâm</option>
+															<option value="2">Không quan tâm</option>
+															<option value="3">Không nghe máy</option>
+															<option value="4">Thuê bao</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-success" onclick="onSaleUpdateTelesaleNetworkButtonClick()">Cập nhật</button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="side-panel-sale-data-manager" style="display: none;">
+								<h1 class="text-center">Danh sách Data của bạn</h1>
+								<div class="row form-group">
+									<div type="button" class="btn btn-link" onclick="onOpenParentFolder()">
+										<span class="glyphicon glyphicon-chevron-left"></span>
+										<label id="sale-data-manager-back-button">Thư mục gốc<label>
+									</div>
+									<div id="sale-create-data-controller" style="float: right;">
+										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sale-create-datasheet-modal" style="float: right; margin-left: 5px;">
+											<span class="glyphicon glyphicon-plus"></span>
+											Tạo data
+										</button>
+										<button type="button" class="btn btn-success" data-toggle="modal" data-target="#sale-create-folder-modal" style="float: right;">
+											<span class="glyphicon glyphicon-plus"></span>
+											Tạo thư mục
+										</button>
+									</div>
+								</div>
+								<table class="table" id="sale-data-manager-table">
+									<tbody>
+									</tbody>
+								</table>
+								<div id="sale-datasheet-manager" style="display: none;">
+									<p id="sale-datasheet-manager-id">Mã data: 0</p>
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+												<th>Tổng số lượng</th>
+												<th>Viettel</th>
+												<th>Vinaphone</th>
+												<th>Mobiphone</th>
+												<th>Khác</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td id="sale-datasheet-manager-amount">0</td>
+												<td id="sale-datasheet-manager-viettel">0</td>
+												<td id="sale-datasheet-manager-vinaphone">0</td>
+												<td id="sale-datasheet-manager-mobiphone">0</td>
+												<td id="sale-datasheet-manager-other">0</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="row form-group">
+										<h4 class="col-sm-8">Tải data lên:</h4>
+										<button type="button" class="btn btn-primary" onclick="onSaleUploadDataButtonClick()" style="float: right;">
+											<span class="glyphicon glyphicon-plus"></span>
+											Thêm SĐT
+										</button>
+									</div>
+									<p> - Copy các SĐT cần tải lên</p>
+									<p> - Mỗi SĐT trên 1 dòng</p>
+									<p> - Nhấn "Thêm SĐT" để tải lên (Nhấn 'Cho phép' nếu được hỏi xin quyền)</p>
+									<p style="color: red;"> - Lưu ý, mỗi data chứa không quá 5000 số điện thoại</p>
+								</div>
+								<div id="sale-create-folder-modal" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Tạo thư mục mới</h4>
+											</div>
+											<div class="modal-body">
+												<div class="form-group">
+													<label class="control-label" for="sale-create-folder-name">Tên thư mục:</label>
+													<input type="text" class="form-control" id="sale-create-folder-name" placeholder="Điền tên thư mục..." name="sale-create-folder-name">
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-success" onclick="onSaleCreateFolderButtonClick()">Tạo thư mục</button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="sale-create-datasheet-modal" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Tạo data mới</h4>
+											</div>
+											<div class="modal-body">
+												<div class="form-group">
+													<label class="control-label" for="sale-create-datasheet-name">Tên data:</label>
+													<input type="text" class="form-control" id="sale-create-datasheet-name" placeholder="Điền tên data..." name="sale-create-datasheet-name">
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-primary" onclick="onSaleCreateDatasheetButtonClick()">Tạo data</button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="sale-rename-datasheet-modal" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4 class="modal-title">Đổi tên</h4>
+										</div>
+										<div class="modal-body">
+											<div class="form-group">
+												<label class="control-label" for="sale-rename-datasheet-name">Tên mới:</label>
+												<input type="text" class="form-control" id="sale-rename-datasheet-name" placeholder="Điền tên mới..." name="sale-rename-datasheet-name">
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-primary" onclick="onSaleRenameDatasheetButtonClick()">Đổi tên</button>
+											<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="sale-delete-datasheet-modal" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4 class="modal-title">Xác nhận xóa</h4>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-primary" onclick="onSaleDeleteDatasheetButtonClick()">Xác nhận xóa</button>
+											<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="sale-upload-datasheet-modal" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+											<h4 class="modal-title">Tải sđt mới vào data</h4>
+										</div>
+										<div class="modal-body">
+											<div class="form-group">
+												<label class="control-label" id="sale-upload-datasheet-content"></label>
+												<p class="control-label" style="color: red;">Lưu ý: các sđt đã được chuẩn hóa và lọc trùng, do đó số lượng đạt điều kiện tải lên sẽ có thể ít hơn số lượng được copy.</p>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-primary" onclick="onSaleUploadDatasheetButtonClick()">Xác nhận</button>
+											<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="side-panel-sale-project-manager" style="display: none;">
+								<h1 class="text-center">Quản lý dự án</h1>
+								<div class="row form-group">
+									<h4 class="col-sm-8">Danh sách Dự án của bạn</h4>
+									<button type="button" class="btn btn-success" data-toggle="modal" data-target="#sale-create-project-modal"  style="float: right;">
+										<span class="glyphicon glyphicon-plus"></span>
+										Tạo Dự án mới
+									</button>
+								</div>
+								<table class="table" id="sale-project-manager-table">
+									<tbody>
+									</tbody>
+								</table>
+								<div id="sale-create-project-modal" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Tạo Dự án mới</h4>
+											</div>
+											<div class="modal-body">
+												<div class="form-group">
+													<label class="control-label" for="sale-create-project-name">Tên dự án:</label>
+													<input type="text" class="form-control" id="sale-create-project-name" placeholder="Điền tên Dự án..." name="sale-create-project-name">
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-primary" onclick="onSaleCreateProjectButtonClick()">Tạo Dự án</button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="sale-rename-project-modal" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Đổi tên</h4>
+											</div>
+											<div class="modal-body">
+												<div class="form-group">
+													<label class="control-label" for="sale-rename-project-name">Tên mới:</label>
+													<input type="text" class="form-control" id="sale-rename-project-name" placeholder="Điền tên mới..." name="sale-rename-project-name">
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-primary" onclick="onSaleRenameProjectButtonClick()">Đổi tên</button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="side-panel-sale-change-password" style="display: none;">
+								<h1 class="text-center">Thay đổi mật khẩu</h1>
+								<div class="form-group">
+									<label>Mật khẩu hiện tại:</label>
+									<input type="password" class="form-control" id="sale-update-password-old" placeholder="Nhập mật khẩu hiện tại" name="sale-update-password-old">
+								</div>
+								<div class="form-group">
+									<label>Mật khẩu mới:</label>
+									<input type="password" class="form-control" id="sale-update-password-new" placeholder="Nhập mật khẩu hiện tại" name="sale-update-password-new">
+								</div>
+								<div class="form-group">
+									<label>Nhập lại mật khẩu mới:</label>
+									<input type="password" class="form-control" id="sale-update-password-new-repeat" placeholder="Nhập mật khẩu hiện tại" name="sale-update-password-new-repeat">
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox" id="sale-toggle-update-password" onclick="onToggleSaleUpdatePasswordClick()">Hiện mật khẩu</label>
+								</div>
+								<button type="button" class="btn btn-primary" onclick="onSaleUpdatePasswordButtonClick()">Đổi mật khẩu</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<div id="panel-telesale" style="display: none;">
-				<h1 class="text-center">Chào mừng Telesale</h1>
+				<h2 class="text-center" id="telesale-name">Username</h2>
+				<h3 class="text-center">Tài khoản Telesale chỉ hỗ trợ sử dụng trên ứng dụng điện thoại, vui lòng cài đặt và sử dụng.</h3>
+				<button type="button" class="col-sm-offset-2 col-sm-3 btn btn-success btn-lg">iPhone</button>
+				<button type="button" class="col-sm-offset-2 col-sm-3 btn btn-primary btn-lg">Android</button>
+				<div class="col-sm-12">
+					<h3 class="text-center">Cảm ơn bạn đã tin tưởng sử dụng VTeles</h3>
+				</div>
+				<div class="col-sm-offset-4 col-sm-4">
+					<button type="button" class="btn btn-danger btn-block btn-lg" onclick="onLogoutButtonClick()">
+						<span class="glyphicon glyphicon-log-out"></span>
+						Đăng xuất
+					</button>
+				</div>
 			</div>
 		</div>
 	</body>
