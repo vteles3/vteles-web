@@ -7,6 +7,8 @@
 
 		<link href="css/main.css" rel="stylesheet" type="text/css"/>
 		
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6971698276345184" crossorigin="anonymous"></script>
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -448,6 +450,72 @@
 											</div>
 											<div class="modal-footer">
 												<button type="button" class="btn btn-success" onclick="onSaleUpdateTelesaleDatasheetButtonClick()">Cập nhật</button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="sale-update-telesale-network-modal" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Cập nhật Mạng</h4>
+											</div>
+											<div class="modal-body">
+												<div class="form-group">
+													<label class="control-label" for="sale-update-telesale-network">Chọn mạng:</label>
+													<select class="form-control form-select" aria-label="Mạng" id="sale-update-telesale-network-group">
+														<option value="0" selected="0">Tất cả</option>
+														<option value="1">Viettel</option>
+														<option value="2">Vinaphone</option>
+														<option value="3">Mobiphone</option>
+													</select>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-success" onclick="onSaleUpdateTelesaleNetworkButtonClick()">Cập nhật</button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="sale-update-telesale-rule-modal" class="modal fade" role="dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title">Cập nhật Luật</h4>
+											</div>
+											<div class="modal-body">
+												<div class="form-group">
+													<label class="control-label" for="sale-update-telesale-rule">Luật trả sđt:</label>
+													<p class="control-label" for="sale-update-telesale-rule">Số lần đã gọi:</p>
+													<div>
+														<select class="form-select" aria-label="Khối" id="sale-update-telesale-rule-compare">
+															<option value="0">Dưới</option>
+															<option value="1" selected="1">Bằng</option>
+															<option value="2">Trên</option>
+														</select>
+														<select class="form-select" aria-label="Khối" id="sale-update-telesale-rule-number">
+															<option value="0" selected="0">0</option>
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+														</select>
+														<div class="text-wrap"> với kết quả cuộc gọi là </div>
+														<select class="form-select" aria-label="Khối" id="sale-update-telesale-rule-result">
+															<option value="0" selected="0">Bất kỳ</option>
+															<option value="1">Quan tâm</option>
+															<option value="2">Không quan tâm</option>
+															<option value="3">Không nghe máy</option>
+															<option value="4">Thuê bao</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-success" onclick="onSaleUpdateTelesaleNetworkButtonClick()">Cập nhật</button>
 												<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
 											</div>
 										</div>

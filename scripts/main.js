@@ -251,6 +251,18 @@ function onExtensionResponse(p_oEvent) {
 			alert("Cập nhật Data KHÔNG thành công!");
 		}
 	}
+	else if (p_oEvent.cmd === "sale_update_telesale_network") {
+		var _bSuccessed = p_oEvent.params.getBool("successed");
+		if (_bSuccessed === true) {
+			$('#sale-update-telesale-network-modal').modal('hide');
+			g_oUserData = p_oEvent.params.getSFSObject("sale_data");
+			loadTelesaleManagerTable();
+			alert("Cập nhật Mạng thành công!");
+		}
+		else {
+			alert("Cập nhật Mạng KHÔNG thành công!");
+		}
+	}
 	else if (p_oEvent.cmd === "sale_create_folder") {
 		var _bSuccessed = p_oEvent.params.getBool("successed");
 		if (_bSuccessed === true) {
@@ -381,16 +393,27 @@ function onSaleDeleteTelesaleClick(p_nTelesale) {
 	$("#sale-delete-telesale-modal").modal('show');
 }
 
-function onClickUpdateTelesaleProject(p_nTelesale) {
+function onClickUpdateTelesaleProject(p_nTelesale, p_nProject) {
 	g_nUpdatingTelesale = p_nTelesale;
 	$("#sale-update-telesale-project-modal").modal('show');
-	$("#sale-update-telesale-project").val('');
+	$("#sale-update-telesale-project").val(p_nProject);
 }
 
-function onClickUpdateTelesaleDatasheet(p_nTelesale) {
+function onClickUpdateTelesaleDatasheet(p_nTelesale, p_nDatasheet) {
 	g_nUpdatingTelesale = p_nTelesale;
 	$("#sale-update-telesale-datasheet-modal").modal('show');
-	$("#sale-update-telesale-datasheet").val('');
+	$("#sale-update-telesale-datasheet").val(p_nDatasheet);
+}
+
+function onClickUpdateTelesaleNetwork(p_nTelesale, p_nNetwork) {
+	g_nUpdatingTelesale = parseInt(p_nTelesale);
+	$("#sale-update-telesale-network-modal").modal('show');
+	$("#sale-update-telesale-network-group").val(parseInt(p_nNetwork));
+}
+
+function onClickUpdateTelesaleRule(p_nTelesale, _nNetwork) {
+	g_nUpdatingTelesale = parseInt(p_nTelesale);
+	$("#sale-update-telesale-rule-modal").modal('show');
 }
 
 function loadTelesaleManagerTable() {
@@ -419,10 +442,10 @@ function loadTelesaleManagerTable() {
 			'<tr>' +
 				'<td>' + _sName + '</br>' + '<h6>' + _sUserName + '</h6>' + '</td>' +
 				'<td>' + _nNumberPhoneNumber + '</td>' +
-				'<td onclick="onClickUpdateTelesaleProject(' + _nID + ')">' + _sProject + '</td>' +
-				'<td onclick="onClickUpdateTelesaleDatasheet(' + _nID + ')">' + _sDatasheet + '</td>' +
-				'<td>' + _sNetwork + '</td>' +
-				'<td>Chưa gọi lần nào</td>' +
+				'<td onclick="onClickUpdateTelesaleProject(\`' + _nID + '\`,\`' + _nProject + '\`)">' + _sProject + '</td>' +
+				'<td onclick="onClickUpdateTelesaleDatasheet(\`' + _nID + '\`,\`' + _nDatasheet + '\`)">' + _sDatasheet + '</td>' +
+				'<td onclick="onClickUpdateTelesaleNetwork(\`' + _nID + '\`,\`' + _nNetwork + '\`)">' + _sNetwork + '</td>' +
+				'<td onclick="onClickUpdateTelesaleRule(\`' + _nID + '\`,\`' + _nNetwork + '\`)">Chưa gọi lần nào</td>' +
 				'<td>' +
 					'<button type="button" class="btn btn-danger btn-xs" onclick="onSaleDeleteTelesaleClick(' + _nID + ')">' +
 						'<span class="glyphicon glyphicon-trash"></span>' +
@@ -526,9 +549,9 @@ function onAdminChangePasswordTabClick() {
 }
 
 function onAdminCreateLeaderButtonClick() {
-	var _nLocation = $('#admin-create-leader-location').prop('selectedIndex')
-	var _nRoom = $('#admin-create-leader-room').prop('selectedIndex')
-	var _nGroup = $('#admin-create-leader-group').prop('selectedIndex')
+	var _nLocation = $('#admin-create-leader-location').prop('selectedIndex');
+	var _nRoom = $('#admin-create-leader-room').prop('selectedIndex');
+	var _nGroup = $('#admin-create-leader-group').prop('selectedIndex');
 	var _sUserName = $("#admin-create-leader-username").val();
 	var _sName = $("#admin-create-leader-name").val();
 	if (_nLocation === 0) {
@@ -743,6 +766,15 @@ function onSaleUpdateTelesaleDatasheetButtonClick() {
 	_oRequestParams.putInt("telesale", g_nUpdatingTelesale);
 	_oRequestParams.putInt("datasheet", _nDatasheet);
 	g_oSFS.send(new SFS2X.ExtensionRequest("telesale.sale_update_telesale_datasheet", _oRequestParams, g_oCurrentRoom));
+}
+
+function onSaleUpdateTelesaleNetworkButtonClick() {
+	var _nNetwork = $("#sale-update-telesale-network-group").prop('selectedIndex');
+	var _oRequestParams = new SFS2X.SFSObject()
+	_oRequestParams.putInt("owner", g_oUserData.getInt("id"));
+	_oRequestParams.putInt("telesale", g_nUpdatingTelesale);
+	_oRequestParams.putInt("network", _nNetwork);
+	g_oSFS.send(new SFS2X.ExtensionRequest("telesale.sale_update_telesale_network", _oRequestParams, g_oCurrentRoom));
 }
 
 function onSaleOpenFolderButtonClick() {
