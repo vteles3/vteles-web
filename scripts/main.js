@@ -487,7 +487,7 @@ function onConnectButtonClick() {
 	var port = $("#port").val();
 	localStorage.setItem("server", server);
 	localStorage.setItem("port", port);
-	initSFSConnection(server, port, "MainExtension", false);
+	initSFSConnection(server, port, "MainExtension", $("#toggle-ssl").prop('checked'));
 }
 
 function onTogglePasswordClick() {
