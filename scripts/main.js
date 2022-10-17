@@ -182,7 +182,7 @@ function onTelesaleCallResult(p_nResult) {
 
 // others
 function loadLocalStorage() {
-	var server = localStorage.getItem("server") === undefined ? "127.0.0.1" : localStorage.getItem("server");
+	var server = localStorage.getItem("server") === undefined ? "34.87.73.198" : localStorage.getItem("server");
 	var port = localStorage.getItem("port") === undefined ? "8080" : localStorage.getItem("port");
 	$("#server").val(server);
 	$("#port").val(port);
