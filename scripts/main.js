@@ -94,8 +94,16 @@ function onExtensionResponse(p_oEvent) {
 		sendRequestJoinRoom(_sRoomName);
 	}
 	else if (p_oEvent.cmd === "get_phone_number") {
-		g_sPhoneNumber = p_oEvent.params.getUtfString("phone_number");
+		var _sPhoneNumber = localStorage.getItem("phone_number") === undefined ? "" : localStorage.getItem("phone_number");
+		if (_sPhoneNumber === "" || _sPhoneNumber === null) {
+			g_sPhoneNumber = p_oEvent.params.getUtfString("phone_number");
+		}
+		else {
+			g_sPhoneNumber = _sPhoneNumber;
+			$('#telesale-call-result').modal('show');
+		}
 		$("#telesale-phone-number").text(g_sPhoneNumber);
+		$('#call-result-model-header').text("Kết quả cuộc gọi cho: " + g_sPhoneNumber);
 	}
 }
 
@@ -157,6 +165,7 @@ function sendRequestJoinRoom(p_sRoomName) {
 }
 
 function onTelesaleCallButtonClick() {
+	localStorage.setItem("phone_number", g_sPhoneNumber);
 	window.open('tel:' + g_sPhoneNumber + '');
 	$('#telesale-call-result').modal('show');
 }
@@ -166,6 +175,12 @@ function onTelesaleCallResultCareClick() {
 }
 
 function onTelesaleCallResult(p_nResult) {
+	if (g_oSFS.isConnected === false) {
+		showSinglePanel($("#panel-connect"));
+		g_oUserData = null;
+		g_oCurrentRoom = null;
+		return;
+	}
 	var _sNote = "";
 	$('#telesale-call-result').modal('hide');
 	if (p_nResult == 1) {
@@ -177,6 +192,7 @@ function onTelesaleCallResult(p_nResult) {
 	_oRequestParams.putInt("result", p_nResult);
 	_oRequestParams.putUtfString("note", _sNote);
 
+	localStorage.setItem("phone_number", "");
 	g_oSFS.send(new SFS2X.ExtensionRequest("telesale.call_result", _oRequestParams, g_oCurrentRoom));
 }
 
